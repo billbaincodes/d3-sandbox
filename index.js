@@ -101,6 +101,8 @@ data = {
 
 function color(){
   const scale = d3.scaleOrdinal(d3.schemeCategory10);
+  console.log(scale(1))
+  console.log(scale(2))
   return d => scale(d.group);
 }
 
@@ -167,7 +169,7 @@ const node = svg.append("g")
   .data(nodes)
   .join("circle")
     .attr("r", 5)
-    .attr("fill", color)
+    .attr("fill", color())
     .call(drag(simulation));
 
 node.append("title")
